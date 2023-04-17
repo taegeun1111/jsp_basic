@@ -1,34 +1,35 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> --%>
 
-        <%@ page import="java.util.*" %>
-            <%@ page import="com.jsp.entity.Dancer" %>
+<%@ page import="java.util.*" %>
+<%@ page import="com.jsp.entity.Dancer" %>
 
-                <% // request객체에 담긴 리스트 꺼내기 List<Dancer> dancerList = (List<Dancer>) request.getAttribute("dl");
-                        %>
-                        <!DOCTYPE html>
-                        <html>
+<%
+    // request객체에 담긴 리스트 꺼내기
+    List<Dancer> dancerList = (List<Dancer>) request.getAttribute("dl");
+%>
 
-                        <head>
-                            <meta charset="UTF-8">
-                            <title>Insert title here</title>
-                        </head>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
 
-                        <body>
-                            <h1>mvc 버전 댄서 목록 뷰</h1>
+    <h1>mvc 버전 댄서 목록 뷰</h1>
 
-                            <% for(Dancer d : dancerList){ %>
+    <% for (Dancer d : dancerList) {  %>
 
-                                <li>
-                                    #이름 : <%= d.getName() %>,
-                                        #크루명 : <%= d.getCrewName() %>,
-                                            #크루명 : <%= d.DanceLevel() %>,
-                                </li>
+        <li>
+            # 이름: <%= d.getName() %>,
+            # 크루명: <%= d.getCrewName() %>,
+            # 레벨: <%= d.getDanceLevel() %>
+        </li>
 
-                                <% } %>
+    <% } %>
 
-                                <a href="/dancer/join">재등록</a>
+    <a href="/dancer/join">재등록</a>
 
-                        </body>
-
-                        </html>
+</body>
+</html>

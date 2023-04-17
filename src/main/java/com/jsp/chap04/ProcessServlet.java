@@ -38,20 +38,13 @@ public class ProcessServlet extends HttpServlet {
 
         // 댄서 목록을 브라우저에 출력 (jsp : view) - 뷰 포워딩
         // 저장소에 있는 댄서 목록을 jsp파일로 전달할 수 있는 방법이 필요
-
         List<Dancer> dancerList = repository.findAll();
 
-        //request 객체는 하나의 요청간에 데이터 수송을 할 수 있음.
-        request.setAttribute("dl",dancerList);
+        // request객체는 하나의 요청간에 데이터 수송을 할 수 있음.
+        request.setAttribute("dl", dancerList);
 
         RequestDispatcher dp
                 = request.getRequestDispatcher("/WEB-INF/chap04/dancer/list.jsp");
         dp.forward(request, resp);
-
-
-
-
-
-
     }
 }

@@ -10,10 +10,11 @@ import java.io.IOException;
 
 @WebServlet("/dancer/join")
 public class RegViewServlet extends HttpServlet {
+
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rq
+        RequestDispatcher dp
                 = req.getRequestDispatcher("/WEB-INF/chap04/dancer/register.jsp");
-        rq.forward(req,resp);
+        dp.forward(req, resp);
     }
 }

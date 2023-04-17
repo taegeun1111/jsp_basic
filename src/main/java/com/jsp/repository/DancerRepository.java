@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+// 댄서 정보 저장소
 public class DancerRepository {
 
     private final Map<String, Dancer> dancerMap = new HashMap<>();
@@ -34,25 +35,21 @@ public class DancerRepository {
 
         // dancerList에 저장
         dancerMap.put(name, dancer);
-
     }
 
-    //댄서 맵을 리스트로 변환해서 리턴하는 메서드
+    // 댄서 맵을 리스트로 변환해서 리턴하는 메서드
     public List<Dancer> findAll() {
 
-        //방법3
         return new ArrayList<>(dancerMap.values());
 
-        //방법1
-//        dancerMap.values().stream()
-//                .collect(Collectors.toList());
+        /*return dancerMap.values().stream()
+                .collect(Collectors.toList());*/
 
-        //방법2
-//            List<Dancer> dancerList = new ArrayList<>();
-//            for (Dancer dancer : dancerMap.values()) {
-//                dancerList.add(dancer);
-//            }
-//            return dancerList;
+        /*List<Dancer> dancerList = new ArrayList<>();
+        for (Dancer dancer : dancerMap.values()) {
+            dancerList.add(dancer);
+        }
+        return dancerList;*/
     }
 
 }

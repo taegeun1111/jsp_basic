@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//등록 데이터를 데이터베이스에 넣고 댄서 목록을 보여줘!
+// 등록데이터를 데이터베이스에 넣고 댄서목록을 보여줘!
 @WebServlet("/chap02/dancer/reg-process")
 public class DancerRegProcessServlet extends HttpServlet {
 

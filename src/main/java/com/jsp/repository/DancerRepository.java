@@ -52,4 +52,9 @@ public class DancerRepository {
         return dancerList;*/
     }
 
+    void delete(String name) {
+        dancerMap.remove(name);
+    }
+
+
 }
